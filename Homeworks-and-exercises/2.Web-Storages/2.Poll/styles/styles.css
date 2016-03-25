@@ -1,0 +1,12 @@
+#wrapper {
+    margin: 20px auto;
+    width: 450px;
+}
+
+fieldset, #timer {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+}

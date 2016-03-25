@@ -1,0 +1,7 @@
+#wrapper {
+    display: flex;
+}
+
+#coutries-list, #towns-list {
+    width: 140px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Poll</title>
+        <link href="styles/styles.css" rel="stylesheet">
+        <script src="js/jquery-2.2.1.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="timer">Registration closes in <span id="time"></span> minutes!</div>
+            <form action="">
+                <input id="names" name="names" type="text" placeholder="Please, enter your names..."/>
+                <fieldset>
+                    <legend>Age:</legend>
+                    <label>
+                        <input type="radio" name="age" value="14-27"/>14-27
+                    </label>
+                    <label>
+                        <input type="radio" name="age" value="28-41"/>28-41
+                    </label>
+                    <label>
+                        <input type="radio" name="age" value="42-55"/>42-55
+                    </label>
+                    <label>
+                        <input type="radio" name="age" value="56+"/>56+
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Education:</legend>
+                    <label>
+                        <input type="radio" name="education" value="Primary education"/>Primary education
+                    </label>
+                    <label>
+                        <input type="radio" name="education" value="Secondary education"/>Secondary education
+                    </label>
+                    <label>
+                        <input type="radio" name="education" value="Higher education"/>Higher education
+                    </label>
+                    <label>
+                        <input type="radio" name="education" value="Higher education doctor's degree"/>Higher education doctor's degree
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Marital status:</legend>
+                    <label>
+                        <input type="radio" name="marital" value="unmarried"/>Unmarried
+                    </label>
+                    <label>
+                        <input type="radio" name="marital" value="married"/>Married
+                    </label>
+                    <label>
+                        <input type="radio" name="marital" value="divorced"/>Divorced
+                    </label>
+                    <label>
+                        <input type="radio" name="marital" value="widow"/>Widow
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Professional status:</legend>
+                    <label>
+                        <input type="radio" name="status" value="Student"/>Student
+                    </label>
+                    <label>
+                        <input type="radio" name="status" value="Unemployed"/>Unemployed
+                    </label>
+                    <label>
+                        <input type="radio" name="status" value="Employed"/>Employed
+                    </label>
+                    <label>
+                        <input type="radio" name="status" value="Retiree"/>Retiree
+                    </label>
+                </fieldset>
+                <button id="submit" >Submit</button>
+                <button id="clear" type="reset">Clear</button>
+                <ul id="info"></ul>
+            </form>
+        </div>
+        <script src="js/poll.js"></script>
+    </body>
+</html>

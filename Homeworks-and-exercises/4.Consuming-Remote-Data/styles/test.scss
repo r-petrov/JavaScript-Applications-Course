@@ -1,0 +1,44 @@
+body {
+  background: url(../images/looking_for_love_in_a_stack_of_books.jpg) no-repeat center center fixed;
+  background-size: 80%;
+
+  #wrapper {
+    width: 540px;
+    margin: 20px auto;
+
+    h1 {
+      text-align: center;
+      color: lightgrey;
+    }
+
+    li {
+      margin: 8px 0;
+      padding: 7px;
+      list-style-position:inside;
+      border: 1px solid darkolivegreen;
+    }
+
+    fieldset {
+      width: 45%;
+      background-color: darkolivegreen;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+
+      label {
+        margin: 5px auto;
+        display: block;
+
+        .new-book {
+          display: block;
+        }
+      }
+
+      #create-book {
+        margin: 10px 0;
+      }
+
+
+    }
+  }
+}

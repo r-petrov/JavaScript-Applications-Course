@@ -1,0 +1,26 @@
+<div id="books" class="background">
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#books}}
+        <tr id="{{bookId}}">
+            <td id="{{bookId}}title" class="edit-book">{{title}}</td>
+            <td id="{{bookId}}author" class="edit-book">{{author}}</td>
+            <td id="{{bookId}}isbn" class="edit-book">{{isbn}}</td>
+            <td>
+                <form>
+                    <button type="button" class="delete-book-btn">x</button>
+                </form>
+            </td>
+        </tr>
+        {{/books}}
+        </tbody>
+    </table>
+    <button id="add-new-book-btn" type="button">Add new book</button>
+</div>

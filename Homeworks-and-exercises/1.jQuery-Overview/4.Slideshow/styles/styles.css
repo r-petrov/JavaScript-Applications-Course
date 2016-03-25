@@ -1,0 +1,27 @@
+#wrapper {
+  width: 450px;
+  margin: auto; }
+  #wrapper .slides {
+    max-width: 400px;
+    background-color: black;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    display: none; }
+    #wrapper .slides div {
+      background-color: white;
+      width: 100%;
+      display: inline-block; }
+      #wrapper .slides div img {
+        width: 100%;
+        height: auto; }
+  #wrapper button {
+    position: absolute; }
+  #wrapper .next {
+    top: 14%;
+    right: 420px; }
+  #wrapper .prev {
+    top: 14%;
+    left: 350px; }
+
+/*# sourceMappingURL=styles.css.map */

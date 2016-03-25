@@ -1,0 +1,12 @@
+#wrapper {
+  width: 400px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link  rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <script src="js/libs/jquery-2.2.1.js"></script>
+    <script src="js/libs/q.js"></script>
+</head>
+<body>
+    <div id="wrapper" >
+        <h1>Books list</h1>
+        <ul id="books"></ul>
+        <form>
+            <fieldset>
+                <legend>Create new book</legend>
+                <label>
+                    Title:
+                    <input id="input-title" class="new-book" name="title" type="text" placeholder="Input book title" required/>
+                </label>
+                <label>
+                    Author:
+                    <input id="input-author" class="new-book" name="author" type="text" placeholder="Input book author" required/>
+                </label>
+                <label>
+                    ISBN:
+                    <input id="input-isbn" class="new-book" name="isbn" type="text" placeholder="Input book isbn" required/>
+                </label>
+                <button id="create-book" type="submit">Create book</button>
+            </fieldset>
+        </form>
+    </div>
+    <script src="js/requester.js"></script>
+    <script src="js/userRequester.js"></script>
+    <script src="js/collectionRequester.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
