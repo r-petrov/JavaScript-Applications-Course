@@ -21,6 +21,7 @@ app.lectureController = (function() {
                     this.trigger('redirectUrl', {url: '#/calendar/my/'});
                 },
                 function(error) {
+                    window.location.reload();
                     //todo error notification message
                 });
             })
@@ -85,7 +86,6 @@ app.lectureController = (function() {
                     start: success.start,
                     end: success.end
                 };
-                console.log(data);
 
                 _this.viewsBag.showEditLecturePage(selector, data);
             },
@@ -106,7 +106,41 @@ app.lectureController = (function() {
                         //todo error notification message
                     });
             })
-            .done();;
+            .done();
+    };
+
+    LectureController.prototype.loadDeleteLecturePage = function(selector, lectureId) {
+        var _this = this;
+        this.model.getLectureById(lectureId)
+            .then(function(success) {
+                var data = {
+                    _id: success._id,
+                    title: success.title,
+                    start: success.start,
+                    end: success.end
+                };
+
+                _this.viewsBag.showDeleteLecturePage(selector, data);
+            },
+            function(error) {
+                //todo error notification message
+            })
+            .done();
+    };
+
+    LectureController.prototype.deleteLecture = function(lectureId) {
+        console.log(lectureId);
+        this.model.deleteLecture(lectureId)
+            .then(function() {
+                //todo notification success message
+                Sammy(function() {
+                        this.trigger('redirectUrl', {url: '#/calendar/my/'});
+                    },
+                    function(error) {
+                        //todo error notification message
+                    });
+            })
+            .done();
     };
 
     return {

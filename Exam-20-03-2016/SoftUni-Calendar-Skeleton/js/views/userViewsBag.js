@@ -37,8 +37,6 @@ app.userViewsBag = (function() {
                     window.location.reload();
                 }
             });
-
-
         });
     }
 

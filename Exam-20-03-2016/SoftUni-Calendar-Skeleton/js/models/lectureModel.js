@@ -29,7 +29,12 @@ app.lectureModel = (function() {
 
     LectureModel.prototype.editLecture = function(data) {
         var requestUrl = this.serviceUrl + data._id;
-        return this.requester.post(requestUrl, data, true);
+        return this.requester.put(requestUrl, data, true);
+    };
+
+    LectureModel.prototype.deleteLecture = function(lectureId) {
+        var requestUrl = this.serviceUrl + lectureId;
+        return this.requester.delete(requestUrl, true);
     };
 
     return {

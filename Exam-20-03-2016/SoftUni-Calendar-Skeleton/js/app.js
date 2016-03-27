@@ -65,6 +65,11 @@ var app = app || {};
             lectureController.loadEditLecturePage(selector, lectureId);
         });
 
+        this.get('#/calendar/delete/:lectureId', function() {
+            var lectureId = this.params['lectureId'];
+            lectureController.loadDeleteLecturePage(selector, lectureId);
+        });
+
         this.bind('redirectUrl', function(event, data) {
             this.redirect(data.url);
         });
@@ -83,6 +88,10 @@ var app = app || {};
 
         this.bind('editLecture', function(event, data) {
             lectureController.editLecture(data);
+        });
+
+        this.bind('deleteLecture', function(event, data) {
+            lectureController.deleteLecture(data._id);
         });
     });
 

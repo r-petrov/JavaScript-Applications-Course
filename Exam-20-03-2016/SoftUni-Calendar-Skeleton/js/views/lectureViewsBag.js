@@ -43,7 +43,7 @@ app.lectureViewsBag = (function () {
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                defaultDate: '2016-01-12',
+                defaultDate: new Date(),
                 selectable: false,
                 editable: false,
                 eventLimit: true,
@@ -85,7 +85,7 @@ app.lectureViewsBag = (function () {
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                defaultDate: '2016-01-12',
+                defaultDate: new Date(),
                 selectable: false,
                 editable: false,
                 eventLimit: true,
@@ -107,16 +107,13 @@ app.lectureViewsBag = (function () {
                         $('#modal-body').html(rendered);
                         $('#editLecture').on('click', function () {
                             lectureId = $('#event-meta').parent().attr('id');
-                            console.log(lectureId);
                             Sammy(function () {
-                                //todo add lecture id to url
                                 this.trigger('redirectUrl', {url: '#/calendar/edit/' + lectureId});
                             })
                         });
                         $('#deleteLecture').on('click', function () {
-                            lectureId = $(this).parent().parent().attr('id');
+                            lectureId = $('#event-meta').parent().attr('id');
                             Sammy(function () {
-                                //todo add lecture id to url
                                 this.trigger('redirectUrl', {url: '#/calendar/delete/' + lectureId});
                             })
                         })
@@ -139,7 +136,7 @@ app.lectureViewsBag = (function () {
 
                 Sammy(function() {
                     this.trigger('editLecture', {
-                        id: id,
+                        _id: id,
                         title: title,
                         start: start,
                         end: end
@@ -149,13 +146,30 @@ app.lectureViewsBag = (function () {
         })
     }
 
+    function showDeleteLecturePage(selector, data) {
+        $.get('templates/delete-lecture.html', function(template) {
+            var rendered = Mustache.render(template, data);
+            $(selector).html(rendered);
+            $('#deleteLecture').on('click', function() {
+                var id = $(event.target).attr('data-id');
+
+                Sammy(function() {
+                    this.trigger('deleteLecture', {
+                        _id: id
+                    })
+                });
+            })
+        });
+    }
+
     return {
         load: function () {
             return {
                 showAddLecturePage: showAddLecturePage,
                 showAllLecturesPage: showAllLecturesPage,
                 showMyLecturesPage: showMyLecturesPage,
-                showEditLecturePage: showEditLecturePage
+                showEditLecturePage: showEditLecturePage,
+                showDeleteLecturePage: showDeleteLecturePage
             }
         }
     }
